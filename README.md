@@ -11,13 +11,13 @@
 
 ### Code Example
 
-'''ruby
+```ruby
 def my_greate_method
   puts "here it is"
 end
-'''
+```
 
-'''javascript
+```javascript
 alert ("Hi there")
 end
-'''
+```
