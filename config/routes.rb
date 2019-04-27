@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #rails g resource Portfolio title:string subtitle:string ....
+  resources :portfolios
   get 'pages/home'
 
   get 'pages/about'
