@@ -5,9 +5,9 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all
   end
 
-   def new
-     @portfolio_item = Portfolio.new
-   end
+  def new
+    @portfolio_item = Portfolio.new
+  end
    
 
   def create
@@ -25,7 +25,7 @@ class PortfoliosController < ApplicationController
       end
     end
   end
-  
+
 #エディットメソッドを作成する
   def edit
     @portfolio_item = Portfolio.find(params[:id])
