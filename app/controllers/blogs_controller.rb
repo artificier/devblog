@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   #privateにbefore_actionが定義されていて、同じコードを書く必要がないようにあらかじめ定義しておく。
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /blogs
   # GET /blogs.json
@@ -60,7 +60,17 @@ class BlogsController < ApplicationController
       end
     end
   end
-
+  
+  def toggle_status
+    #byebug 
+	if @blog.draft?
+	  @blog.published!
+	elsif @blog.published?
+	  @blog.draft!
+	end
+	redirect_to blogs_url, notice: 'Post status has been updated.'
+  end
+  
   # DELETE /blogs/1
   # DELETE /blogs/1.json
   def destroy
