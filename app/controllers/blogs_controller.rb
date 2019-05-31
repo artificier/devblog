@@ -19,8 +19,6 @@ class BlogsController < ApplicationController
 
   # GET /blogs/new
   def new
-	#何もはいっていない値を入れる
-	#new.html.erbではformへレンダリグされてそこで値を入力する
     @blog = Blog.new
   end
 
@@ -31,18 +29,13 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-  　　#blog_paramsとは？
     @blog = Blog.new(blog_params)
 
     respond_to do |format|
       if @blog.save
-	    #format.htmlでブラウザで利用できるようにする。
         format.html { redirect_to @blog, notice: 'Your post is now live.' }
-        #上と同じ内容→format.html { redirect_to blog_path(@blog), notice: 'Blog was successfully created.' }
-        #format.json { render :show, status: :created, location: @blog }
       else
         format.html { render :new }
-        #format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -89,7 +82,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-	　　#データべースで使えるようになる。呼び出して使う。
       params.require(:blog).permit(:title, :body)
     end
 end
