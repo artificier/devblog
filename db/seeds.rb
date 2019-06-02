@@ -1,10 +1,17 @@
 #10個のブログを投稿してみよう
 #schema.rb観ながらやるといい
 
+3.times do |topic|
+  Topic.create!(
+    title: "Topic #{topic}" 
+  )
+end
+
 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
-    body: "what shi"
+    body: "what shi",
+	topic_id: Topic.last.id
   )
 end
 
@@ -19,10 +26,21 @@ end
 
 puts "5 skill created"
 
-9.times do |portfolio_itme|
+8.times do |portfolio_itme|
   Portfolio.create!(
     title: "Portfolio title] #{portfolio_itme}",
-	subtitle: "My great service",
+	subtitle: "Ruby on Rails",
+	body: "Nice work is a future things to do create a good work for a entrepreneur",
+	main_image: "http://placehold.it/600x400",
+	thumb_image: "http://placehold.it/350x200"
+  )
+end
+
+
+1.times do |portfolio_itme|
+  Portfolio.create!(
+    title: "Portfolio title] #{portfolio_itme}",
+	subtitle: "Angular",
 	body: "Nice work is a future things to do create a good work for a entrepreneur",
 	main_image: "http://placehold.it/600x400",
 	thumb_image: "http://placehold.it/350x200"
