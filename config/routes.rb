@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #rails g resource Portfolio title:string subtitle:string ....
   #resources :portfolios
   resources :portfolios, except: [:show]
