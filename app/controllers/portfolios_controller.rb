@@ -1,4 +1,6 @@
 class PortfoliosController < ApplicationController
+  layout 'portfolio'
+
   def index
     #Calling the model inside of the controller
 	#available to the view

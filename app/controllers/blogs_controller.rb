@@ -1,7 +1,8 @@
 class BlogsController < ApplicationController
   #privateにbefore_actionが定義されていて、同じコードを書く必要がないようにあらかじめ定義しておく。
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
-
+  layout "blog"
+  
   # GET /blogs
   # GET /blogs.json
   def index
