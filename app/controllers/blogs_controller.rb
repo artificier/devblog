@@ -7,6 +7,7 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
 	#@blogs = Blog.limit(1)
+	@page_title = "My Portfolio Blog"
   end
 
   # GET /blogs/1
@@ -15,6 +16,8 @@ class BlogsController < ApplicationController
 	#showメソッドで呼び出されているのは実際には以下のコードである。
 	#@blog = Blog.find(params[:id])
 	#@blog = Blog.find(2)
+	@page_title = @blog.title
+	@seo_keywords = @blog.body
   end
 
   # GET /blogs/new
