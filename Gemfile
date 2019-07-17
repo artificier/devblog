@@ -10,6 +10,9 @@ end
 gem 'rails', '~> 5.1.7'
 gem 'friendly_id', '~> 5.2.4'
 gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+gem 'execjs', '~> 2.7'
 
 
 # Use sqlite3 as the database for Active Record
