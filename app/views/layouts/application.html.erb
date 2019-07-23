@@ -17,16 +17,13 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
 
-			<%= render "shared/application_nav" %>
-
-			<%= login_helper %>
+			<header class="fixed-top"><%= render "shared/application_nav" %></header>
 			
 			<%= yield %>
 			
+			<footer class="fixed-bottom"><%= render "shared/appilication_footer" %>
 			
-			<%= @copyright %>
-			
-			<%= source_helper("application") %>
+			<%= source_helper("application") %>    </footer>
 
         </div>
       </div>
